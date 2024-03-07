@@ -12,3 +12,8 @@ npm install serve-favicon --save
 
 # Middleware pour parser le body json
 npm install body-parser --save
+
+# Installer l'ORM sequelize
+npm install sequelize --save
+# Installation du driver pour effectuer la connexion à la BDD
+npm install mariadb --save

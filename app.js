@@ -2,11 +2,26 @@ const express = require('express');
 const morgan = require('morgan');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
+const { Sequelize } = require('sequelize')
 const {sucess, getUniqueId} = require('./helper');
 let pokemons = require('./mock-pokemon');
 
 const app = express();
 const port = 3000;
+
+const sequelize = new Sequelize(
+    'pokedex',
+    'root',
+    '',
+    {
+        host:'localhost',
+        dialect: 'mariadb',
+        dialectOptions: {
+            timezone: 'Etc/GMT-2'
+        },
+        logging: false
+    }
+)
 
 // 1er Midllware utilisé pour afficher la route (ne pas oublier de le use)
 // const logger =(req, res, next) => {
