@@ -21,7 +21,10 @@ app
   require('./src/routes/updatePokemon')(app)
   require('./src/routes/deletePokemon')(app)
 
-
+app.use(({res}) => {
+    const message = "Impossible d'afficger la ressource demandée"
+    res.status(404).json({message})
+})
 
 app.get("/", (req, res) => res.send("Coucou"));
 app.listen(port, () => console.log(`Nous sommes sur le port ${port}`));
