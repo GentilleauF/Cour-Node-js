@@ -18,6 +18,17 @@ npm install sequelize --save
 # Installation du driver pour effectuer la connexion à la BDD
 npm install mariadb --save
 
+# Installation du cripteur de mdp
+npm install bcrypt --save
+
+# Installation JWT
+npm install jsonwebtoken --save
+
+
+
+
+
+
 
 # Validator
 Permettent de verifier le contenu de la requete avant d'envoyer en BDD
