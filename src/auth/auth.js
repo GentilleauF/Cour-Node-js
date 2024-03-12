@@ -9,7 +9,7 @@ module.exports = (req, res, next) => {
     return res.status(401).json({ message })
   }
     
-    const token = authorizationHeader.split(' ')[1] // Le split permet de recuperer le jwt de la requete http 'la requete est Bearer <jwt>
+    const token = authorizationHeader.split(' ')[1]
     const decodedToken = jwt.verify(token, privateKey, (error, decodedToken) => {
     if(error) {
       const message = `L'utilisateur n'est pas autorisé à accèder à cette ressource.`
